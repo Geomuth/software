@@ -122,7 +122,85 @@
     </div>
   </div>
     </div>
-
+<section id="faq">
+    <div class="container">
+        <div class="section-title">
+            <h2>Frequently Asked Questions</h2>
+            <p>Find answers to common questions about our services and processes</p>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What industries do you specialize in?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We work with clients across various industries including finance, healthcare, e-commerce, education, and government sectors. Our team has experience delivering solutions tailored to specific industry requirements and compliance standards.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What is your typical project timeline?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Project timelines vary based on complexity. Simple websites take 2-4 weeks, custom software solutions 3-6 months, and enterprise systems 6+ months. We provide detailed timelines after initial consultation and requirements gathering.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do you offer ongoing support and maintenance?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, we offer comprehensive support packages including regular updates, security patches, performance monitoring, and technical support. Our maintenance plans ensure your systems remain secure, up-to-date, and optimized.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How do you ensure cybersecurity for client projects?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We implement security-by-design principles, conduct regular vulnerability assessments, use encryption standards, follow OWASP guidelines, and perform penetration testing. All projects include security audits and compliance checks.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What technologies and frameworks do you use?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We use modern technologies including React, Angular, Vue.js for frontend; Node.js, Python, Java for backend; AWS, Azure, Google Cloud for infrastructure; and Docker, Kubernetes for deployment. We choose technologies based on project requirements.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How do you handle project communication and updates?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We maintain transparent communication through weekly meetings, progress reports, and dedicated communication channels. Clients have access to project management tools and can track progress in real-time.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do you provide training for delivered solutions?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, we provide comprehensive training sessions, user manuals, documentation, and video tutorials. We ensure your team is fully equipped to use and manage the delivered solutions effectively.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
    <!-- Contacts Section -->
     <section id="contacts">
         <div class="container">
@@ -253,6 +331,42 @@
     mobileMenu.addEventListener('click', () => {
       navLinks.classList.toggle('active');
     });
+
+    // Add this to your existing script section (after the mobile menu script)
+
+// FAQ Accordion Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const answer = question.nextElementSibling;
+            const isActive = question.classList.contains('active');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.classList.remove('active');
+                q.nextElementSibling.classList.remove('active');
+            });
+            
+            // Open current if it wasn't active
+            if (!isActive) {
+                question.classList.add('active');
+                answer.classList.add('active');
+            }
+        });
+    });
+    
+    // Close FAQ when clicking outside (mobile-friendly)
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.faq-item') && window.innerWidth <= 768) {
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.classList.remove('active');
+                q.nextElementSibling.classList.remove('active');
+            });
+        }
+    });
+});
   </script>
 </body>
 </html>
