@@ -9,7 +9,7 @@
 /* FAQ Section */
 #faq {
     padding: 80px 0;
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    background: linear-gradient(135deg, #a9bbce, #e9ecef);
 }
 
 .faq-container {
@@ -18,7 +18,7 @@
 }
 
 .faq-item {
-    background: white;
+    background: rgb(157, 243, 217);
     border-radius: 10px;
     margin-bottom: 15px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.08);
@@ -292,6 +292,11 @@ h2 {
     color: #555;
     text-align: left;
     line-height: 1.6;
+}
+.contact-item a{
+    color: #e3f0e6;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
 /* Grid Layout */
