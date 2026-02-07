@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geoffrey Muthoka - CV | TECHGEO</title>
+    <style>
+        :root {
+            --primary: #d87330;
+            --secondary: #1eaf5a;
+            --light: #282a2c;
+            --dark: #1e293b;
+            --gray: #64748b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #80919c 0%, #e0f2fe 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgb(163, 189, 174);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 30px;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--primary);
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary);
+            padding: 5px;
+            background: white;
+        }
+        
+        .name-title h1 {
+            color: var(--dark);
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .name-title .title {
+            color: var(--primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .download-btn {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+        
+        .download-btn:active {
+            transform: translateY(0);
+        }
+        
+        .download-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            .header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section h2 svg {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gray);
+        }
+        
+        .contact-item a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-item a:hover {
+            color: var(--secondary);
+        }
+        
+        .contact-item svg {
+            width: 18px;
+            height: 18px;
+            color: var(--primary);
+        }
+        
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #e0f2fe;
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+        
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-tag {
+            background: #e0f2fe;
+            color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .experience-item, .education-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        
+        .experience-item:last-child, .education-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .job-title, .degree {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1.1rem;
+        }
+        
+        .company, .school {
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        .date {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin: 5px 0;
+        }
+        
+        .description {
+            color: var(--gray);
+            margin-top: 8px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .domain-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .domain-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Print/PDF Optimization */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+                padding: 20px;
+                max-width: 100%;
+                background: white;
+            }
+            
+            .download-btn {
+                display: none !important;
+                visibility: hidden !important;
+                height: 0 !important;
+                width: 0 !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                border: none !important;
+            }
+            
+            .header {
+                border-bottom: 2px solid var(--primary);
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+            
+            a {
+                text-decoration: none;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            
+            .experience-item, .education-item {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+        }
+        
+        /* Ensure button is hidden in PDF generation */
+        .download-btn {
+            page-break-after: avoid;
+            break-after: avoid;
+        }
+        
+        /* Page break optimization for PDF */
+        .section {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+        
+        .experience-item, .education-item {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+        
+        .header {
+            page-break-after: avoid;
+            break-after: avoid;
+        }
+        
+        .content {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- html2pdf library for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-section">
+                <img src="logo.jpeg" alt="Geoffrey Muthoka" class="logo" id="cvLogo">
+                <div class="name-title">
+                    <h1>Geoffrey Muthoka</h1>
+                    <div class="title">Full Stack Developer & Cyber Security Enthusiast</div>
+                </div>
+            </div>
+            <button class="download-btn" id="downloadBtn">
+                <i class="fas fa-download"></i>
+                Download CV (PDF)
+            </button>
+        </div>
+        
+        <div class="content">
+            <div class="left-column">
+                <div class="section">
+                    <h2><i class="fas fa-user"></i> Profile</h2>
+                    <p>Passionate Computer Science student pursuing excellence in full-stack development and cybersecurity. Dedicated to building secure, scalable web solutions and exploring cutting-edge technologies in security and network infrastructure.</p>
+                </div>
+                
+                <div class="section">
+                    <h2><i class="fas fa-address-card"></i> Contact</h2>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a style="text-decoration: none;" href="mailto:techgeof@gmail.com"><span>techgeof@gmail.com</span></a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Makueni, Kenya</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-birthday-cake"></i>
+                            <span>July 14, 2005</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href=" https://wa.me/message/GLEMGMF4KOW4C1" class="social-link" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://linkedin.com/in/techgeo" class="social-link" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Geomuth" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://x.com/MaithaGeof642" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/techg254" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://tiktok.com/@geotechn" class="social-link" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://t.me/@techgeof" class="social-link" title="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="https://port.techgeo.co.ke" class="social-link" title="Portfolio"><i class="fas fa-globe"></i></a>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2><i class="fas fa-code"></i> Skills</h2>
+                    <div class="skills-list">
+                        <!-- Full Stack -->
+                        <span class="skill-tag">JavaScript/TypeScript</span>
+                        <span class="skill-tag">React & Next.js</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">API Development</span>
+                        <span class="skill-tag">Git & GitHub</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <!-- Cyber Security -->
+                        <span class="skill-tag">Network Security</span>
+                        <span class="skill-tag">Penetration Testing</span>
+                        <span class="skill-tag">Cryptography</span>
+                        <span class="skill-tag">Firewalls</span>
+                        <span class="skill-tag">Linux Security</span>
+                        <span class="skill-tag">Web Security</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-column">
+                <div class="section">
+                    <h2><i class="fas fa-briefcase"></i> Experience</h2>
+                    <div class="experience-item">
+                        <div class="job-title">Student Developer</div>
+                        <div class="company">Self-Employed | Freelance Projects</div>
+                        <div class="date">2024 - Present</div>
+                        <div class="description">Developing full-stack web applications, learning cybersecurity practices, and building portfolio projects while pursuing studies.</div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                    <div class="education-item">
+                        <div class="degree">Bachelor of Computer Science</div>
+                        <div class="school">Kirinyaga University</div>
+                        <div class="date">2024 - Present</div>
+                        <div class="description">Currently pursuing degree in Computer Science with focus on full-stack development and cybersecurity.</div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+                    <div class="experience-item">
+                        <div class="job-title">TECHGEO Portfolio</div>
+                        <div class="description">Built and deployed a professional portfolio with custom domain, GitHub Pages hosting, and secure DNS configuration implementation.</div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="job-title">Web Security Projects</div>
+                        <div class="description">Exploring cybersecurity concepts through practical projects involving network security, secure coding practices, and vulnerability assessment.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© <span id="currentYear"></span> Geoffrey Muthoka. Hosted on <a href="https://port.techgeo.co.ke" class="domain-link">port.techgeo.co.ke</a> via GitHub Pages</p>
+        </div>
+    </div>
+
+    <script>
+        // Set current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Download button functionality
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            const element = document.querySelector('.container');
+            
+            // Ensure logo is loaded before generating PDF
+            const logoImg = document.querySelector('.logo');
+            const logoPromise = new Promise((resolve) => {
+                if (logoImg.complete) {
+                    resolve();
+                } else {
+                    logoImg.addEventListener('load', resolve);
+                    logoImg.addEventListener('error', resolve); // Resolve even if error to continue
+                }
+            });
+            
+            logoPromise.then(() => {
+                // PDF generation options
+                const opt = {
+                    margin: 10,
+                    filename: 'TECHGEO cv.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { 
+                        scale: 2,
+                        allowTaint: true,
+                        useCORS: true,
+                        logging: false,
+                        backgroundColor: '#ffffff'
+                    },
+                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+                    pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+                };
+                
+                // Generate and download PDF directly
+                html2pdf().set(opt).from(element).save();
+            });
+        });
+        
+        // Fallback for logo if not found
+        document.getElementById('cvLogo').addEventListener('error', function() {
+            this.src = 'https://port.techgeo.co.ke/logo.jpeg';
+            this.alt = 'Geomuth Initials Logo';
+        });
+        
+        // Print functionality (Ctrl+P or Cmd+P)
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                e.preventDefault();
+                alert('For best print results, use the download button first, then print the downloaded file.');
+            }
+        });
+    </script>
+</body>
+</html>
