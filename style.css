@@ -9,7 +9,7 @@
 /* FAQ Section */
 #faq {
     padding: 80px 0;
-    background: linear-gradient(135deg, #a9bbce, #e9ecef);
+    background: linear-gradient(135deg, #28aa48, #06a31b);
 }
 
 .faq-container {
@@ -32,16 +32,16 @@
     justify-content: space-between;
     align-items: center;
     font-weight: 600;
-    color: #1a2a6c;
+    color: #ff1100;
     transition: background-color 0.3s;
 }
 
 .faq-question:hover {
-    background-color: #f5f7ff;
+    background-color: #d3e90b;
 }
 
 .faq-question.active {
-    background-color: #f0f4ff;
+    background-color: #253803;
 }
 
 .faq-icon {
@@ -66,7 +66,7 @@
 }
 
 .faq-answer p {
-    color: #555;
+    color: #081605;
     line-height: 1.7;
 }
 
@@ -155,7 +155,7 @@ body {
 
 /* Navigation */
 .navbar {
-    background: linear-gradient(135deg, #c0cfb3, #72c98f, #40806c);
+    background: linear-gradient(135deg, #75fa00, #05d84c, #06b30f);
     padding: 1rem 2rem;
     position: fixed;
     width: 100%;
@@ -164,13 +164,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 15px rgba(223, 219, 4, 0.2);
 }
 
 .logo {
     font-size: 1.8rem;
     font-weight: bold;
-    color: white;
+    color: rgb(255, 255, 255);
     text-transform: uppercase;
     letter-spacing: 2px;
     white-space: nowrap;
@@ -185,14 +185,24 @@ body {
 .nav-links a {
     color: white;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: bold;
     transition: color 0.3s ease;
     padding: 0.5rem 1rem;
     border-radius: 5px;
 }
 
 .nav-links a:hover {
-    background-color: rgba(255,255,255,0.2);
+    background-image: url('logo.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ff0062;
+    font-size: bold;
+    font-weight: bolder;
+    border-radius: 20px;
+    border-top: 3px solid #c02330;
+    transition: all 1s ease;
+    border-bottom: 3px solid #a82828;
 }
 
 .menu-toggle {
@@ -210,7 +220,7 @@ body {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background: linear-gradient(135deg, #4ea368, #568d88);
+    background: linear-gradient(135deg, #022b0e, #104641);
     padding: 15px;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.3);
@@ -257,15 +267,15 @@ body {
 h2 {
     font-size: 3rem;
     word-break: break-all;
-    color: #4caa54;
+    color: #01f115;
     text-align: center;
     margin-bottom: 20px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    text-shadow: 5px 10px 1px rgba(18, 219, 35, 0.1);
 }
 
 .main > p {
     font-size: 1.2rem;
-    color: #555;
+    color: #d41111;
     text-align: center;
     margin-bottom: 40px;
 }
@@ -273,14 +283,14 @@ h2 {
 /* Services Section */
 #services h3 {
     font-size: 1.5rem;
-    color: #224b2c;
+    color: #0dc03a;
     text-align: center;
     margin: 15px 0;
 }
 
 #services p {
     font-size: 1rem;
-    color: #555;
+    color: #000000;
     text-align: left;
     line-height: 1.6;
 }
@@ -329,7 +339,7 @@ h2 {
 /* Contacts Section */
 #contacts {
     padding: 80px 0;
-    background: linear-gradient(135deg, #b1bef1, #8e93b3);
+    background: linear-gradient(135deg, #1f4e1a, #124d2b);
     color: #fff;
     position: relative;
     z-index: 10;
@@ -380,7 +390,7 @@ h2 {
 .contact-icon {
     width: 50px;
     height: 50px;
-    background: rgba(64, 194, 211, 0.795);
+    background: rgba(97, 255, 5, 0.795);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -392,14 +402,14 @@ h2 {
 .contact-form {
     flex: 1;
     min-width: 300px;
-    background: #fdeeee;
+    background: #193d0e;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .contact-form h3 {
-    color: #308a3f;
+    color: #23d841;
     margin-bottom: 20px;
     font-size: 1.8rem;
 }
@@ -467,7 +477,7 @@ footer {
 
 .footer-column p {
     margin-bottom: 15px;
-    color: #ccc;
+    color: #fefffe;
     text-align: left;
 }
 
@@ -480,7 +490,7 @@ footer {
 }
 
 .footer-links a {
-    color: #ccc;
+    color: #ffffff;
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -509,14 +519,14 @@ footer {
 }
 
 .social-links a:hover {
-    background: #f31404;
+    background: #031a01;
 }
 
 .copyright {
     text-align: center;
     padding-top: 20px;
     border-top: 1px solid rgba(255,255,255,0.1);
-    color: #ccc;
+    color: #ffffff;
     font-size: 14px;
 }
 
